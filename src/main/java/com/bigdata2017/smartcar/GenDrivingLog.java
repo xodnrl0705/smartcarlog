@@ -43,7 +43,7 @@ public class GenDrivingLog {
 			int tmpWildCarNum;
 	
 			String logFile = "./logs/driving.log";
-			printWriter = new PrintWriter( new FileWriter( logFile ), true);
+			printWriter = new PrintWriter( new FileWriter( logFile ), true );
 			
 			for(int i = 1; i <= carCount; i++) {
 				

@@ -26,7 +26,7 @@ public class GenStatusLog {
 			}
 			
 			String logFile = "./logs/status_" + date + ".log";
-			printWriter = new PrintWriter( new FileWriter( logFile ) );
+			printWriter = new PrintWriter( new FileWriter( logFile ), true );
 			
 			ArrayList<Thread> threads = new ArrayList<Thread>();
 			for(int i = 1; i <= carCount; i++) {
