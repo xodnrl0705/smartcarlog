@@ -21,6 +21,7 @@ public class GenDrivingLogThread extends Thread{
 	
 			printWriter.println( "Driver Status Infomation,CarNum,AccStep,BrkStep,WheelStep,DirLightStep,Speed,AreaNum" );
 			
+			
 			try {
 				for(int i = 0; i <= count; i += 1) { // 1초 간격
 					printWriter.println(
@@ -33,7 +34,7 @@ public class GenDrivingLogThread extends Thread{
 						carDriving.getDirLightStep() + "," +
 						carDriving.getSpeed()		 + "," +
 						carDriving.getAreaNum() );
-					
+				
 					sleep(1 * 100);
 				}
 			} catch (InterruptedException e) {
