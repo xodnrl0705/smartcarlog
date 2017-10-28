@@ -17,7 +17,6 @@ public class GenDrivingLogThread extends Thread{
 
 	@Override    
 	public void run() {
-		synchronized( printWriter ){
 			int count = 24 * 60 * 60;
 	
 			printWriter.println( "Driver Status Infomation,CarNum,AccStep,BrkStep,WheelStep,DirLightStep,Speed,AreaNum" );
@@ -40,7 +39,6 @@ public class GenDrivingLogThread extends Thread{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}
 	}
 
 	public String getSecToTime(int inSec) {
