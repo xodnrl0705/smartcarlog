@@ -17,30 +17,32 @@ public class GenDrivingLogThread extends Thread{
 
 	@Override    
 	public void run() {
-		synchronized( printWriter ){
 			int count = 24 * 60 * 60;
 	
-			printWriter.println( "Driver Status Infomation,CarNum,AccStep,BrkStep,WheelStep,DirLightStep,Speed,AreaNum" );
+//			printWriter.println( "Driver Status Infomation,CarNum,AccStep,BrkStep,WheelStep,DirLightStep,Speed,AreaNum" );
 			
 			try {
 				for(int i = 0; i <= count; i += 1) { // 1초 간격
-					printWriter.println(
-						date +
-						getSecToTime(i)				 + "," +
-						carDriving.getCarNum()		 + "," +
-						carDriving.getAccStep()		 + "," +
-						carDriving.getBrkStep()		 + "," +
-						carDriving.getWheelStep()	 + "," +
-						carDriving.getDirLightStep() + "," +
-						carDriving.getSpeed()		 + "," +
-						carDriving.getAreaNum() );
+					
+					synchronized( printWriter ){
+						printWriter.println(
+							date +
+							getSecToTime(i)				 + "," +
+							carDriving.getCarNum()		 + "," +
+							carDriving.getAccStep()		 + "," +
+							carDriving.getBrkStep()		 + "," +
+							carDriving.getWheelStep()	 + "," +
+							carDriving.getDirLightStep() + "," +
+							carDriving.getSpeed()		 + "," +
+							carDriving.getAreaNum() );
+					}
 					
 					sleep(1 * 100);
+					
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}
 	}
 
 	public String getSecToTime(int inSec) {

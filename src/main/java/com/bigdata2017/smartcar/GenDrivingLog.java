@@ -42,6 +42,7 @@ public class GenDrivingLog {
 			boolean isWild = false;
 			int tmpWildCarNum;
 	
+			//printWriter = new PrintWriter( System.out, true );
 			String logFile = "./logs/driving.log";
 			printWriter = new PrintWriter( new FileWriter( logFile ), true );
 			
